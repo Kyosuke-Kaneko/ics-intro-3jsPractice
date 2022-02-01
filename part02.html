@@ -38,10 +38,29 @@ function init() {
 //   scene.add( cube );
 
 //   平面を作成(width,height,widthSegments,heightSegments を指定)
-  const geometry = new THREE.PlaneGeometry( 100, 300, 32 );
-  const material = new THREE.MeshBasicMaterial( {color: 0xFF0000, side: THREE.DoubleSide} );
-  const plane = new THREE.Mesh( geometry, material );
-  scene.add( plane );
+//   const geometry = new THREE.PlaneGeometry( 100, 300, 32 );
+//   const material = new THREE.MeshBasicMaterial( {color: 0xFF0000, side: THREE.DoubleSide} );
+//   const plane = new THREE.Mesh( geometry, material );
+//   scene.add( plane );
+
+//   円錐を作成(radiusTop,radiusBottom,height,radialSegments を指定)
+//   const geometry = new THREE.ConeGeometry( 100, 400, 32 );
+//   const material = new THREE.MeshBasicMaterial( {color: 0xFF0000} );
+//   const cone = new THREE.Mesh( geometry, material );
+//   scene.add( cone );
+
+//   円柱を作成(width,height,widthSegments,heightSegments を指定)
+// const geometry = new THREE.CylinderGeometry( 100, 100, 400, 32 );
+// const material = new THREE.MeshBasicMaterial( {color: 0xFF0000} );
+// const cylinder = new THREE.Mesh( geometry, material );
+// scene.add( cylinder );
+
+//   ドーナツ形状を作成(radius,tube,radialSegments,tubularSegments を指定)
+  const geometry = new THREE.TorusGeometry( 100, 30, 16, 100);
+  const material = new THREE.MeshBasicMaterial( { color: 0xFF0000 } );
+  const torus = new THREE.Mesh( geometry, material );
+  scene.add( torus );
+
 
   // 平行光源
   const directionalLight = new THREE.DirectionalLight(0xFFFFFF);
@@ -56,7 +75,10 @@ function init() {
     // メッシュを回転させる
     // sphere.rotation.y += 0.01;
     // cube.rotation.y += 0.01;
-    plane.rotation.y += 0.01;
+    // plane.rotation.y += 0.01;
+    // cone.rotation.y += 0.01;
+    // cylinder.rotation.y += 0.01;
+    torus.rotation.y += 0.01;
 
     // レンダリング
     renderer.render(scene, camera);
