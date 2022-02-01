@@ -1,4 +1,7 @@
-# three,js基本構造
+# 3js-ics-media初級
+[https://ics.media/tutorial-three/quickstart/](https://ics.media/tutorial-three/quickstart/)
+
+## three,js基本構造
 ## THREE.Sceneクラス
 
 3Dの空間を表すクラス。3Dの作成されたオブジェクト(メッシュ)はシーンにadd()メソッドを利用して追加することで表示できます。
