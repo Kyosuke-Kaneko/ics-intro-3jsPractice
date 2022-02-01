@@ -32,10 +32,16 @@ function init() {
 //   scene.add( sphere );
 
 //   立方体を作成(width,height,depthを指定)
-  const geometry = new THREE.BoxGeometry( 100, 100, 100 );
-  const material = new THREE.MeshBasicMaterial( {color: 0xFF0000} );
-  const cube = new THREE.Mesh( geometry, material );
-  scene.add( cube );
+//   const geometry = new THREE.BoxGeometry( 100, 100, 100 );
+//   const material = new THREE.MeshBasicMaterial( {color: 0xFF0000} );
+//   const cube = new THREE.Mesh( geometry, material );
+//   scene.add( cube );
+
+//   平面を作成(width,height,widthSegments,heightSegments を指定)
+  const geometry = new THREE.PlaneGeometry( 100, 300, 32 );
+  const material = new THREE.MeshBasicMaterial( {color: 0xFF0000, side: THREE.DoubleSide} );
+  const plane = new THREE.Mesh( geometry, material );
+  scene.add( plane );
 
   // 平行光源
   const directionalLight = new THREE.DirectionalLight(0xFFFFFF);
@@ -49,7 +55,8 @@ function init() {
   function tick() {
     // メッシュを回転させる
     // sphere.rotation.y += 0.01;
-    cube.rotation.y += 0.01;
+    // cube.rotation.y += 0.01;
+    plane.rotation.y += 0.01;
 
     // レンダリング
     renderer.render(scene, camera);

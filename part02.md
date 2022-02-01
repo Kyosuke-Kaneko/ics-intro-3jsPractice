@@ -45,3 +45,13 @@ widthSegments — Number of segmented rectangular faces along the width of the s
 heightSegments — Number of segmented rectangular faces along the height of the sides. Optional; defaults to 1.
 
 depthSegments — Number of segmented rectangular faces along the depth of the sides. Optional; defaults to 1.
+
+## 平面
+width — Width along the X axis. Default is 1.
+
+height — Height along the Y axis. Default is 1.
+
+widthSegments — Optional. Default is 1.
+
+heightSegments — Optional. Default is 1.
+
