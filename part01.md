@@ -19,3 +19,13 @@ Three.jsのオブジェクトの作成手順として<br>
 
 ### THREE.AmbientLightクラス
 環境光。空間全体を照らす光として使用できます。
+
+## 画像をマテリアルにするとき
+画像はGPUの制約から、2の累乗の高さ・幅である画像のみが利用できます。<br>
+省略するときはこのように書く。
+```js
+// マテリアルにテクスチャーを設定
+const material = new THREE.MeshStandardMaterial({
+  map: new THREE.TextureLoader().load('imgs/earthmap1k.jpg')
+});
+```
