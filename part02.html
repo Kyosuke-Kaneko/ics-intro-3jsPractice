@@ -25,12 +25,11 @@ function init() {
   const camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
   camera.position.set(0, 0, +1000);
 
-  // 球体を作成
-  const geometry = new THREE.SphereGeometry( 300, 64, 64 );
-  const material = new THREE.MeshStandardMaterial( {color: 0x6699FF, metalness: 0, roughness: 0.5} );
-  // メッシュを作成
-  const sphere = new THREE.Mesh( geometry, material );
-  scene.add( sphere );
+  // 立方体を作成(width,height,depthを指定)
+  const geometry = new THREE.BoxGeometry( 100, 100, 100 );
+  const material = new THREE.MeshBasicMaterial( {color: 0xFF0000} );
+  const cube = new THREE.Mesh( geometry, material );
+  scene.add( cube );
 
   // 平行光源
   const directionalLight = new THREE.DirectionalLight(0xFFFFFF);
@@ -43,7 +42,7 @@ function init() {
   // 毎フレーム時に実行されるループイベントです
   function tick() {
     // メッシュを回転させる
-    sphere.rotation.y += 0.01;
+    cube.rotation.y += 0.01;
     // レンダリング
     renderer.render(scene, camera);
 
